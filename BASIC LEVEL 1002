@@ -1,0 +1,23 @@
+#include <stdio.h>
+# define N 1000
+char inStr[N];
+int outStr[N];
+int main()
+{
+     char stdStr[10][5]={"ling","yi","er","san","si","wu","liu","qi","ba","jiu"};
+ 
+     scanf("%s",inStr);
+     int i,sum=0;
+     for(i=0;inStr[i]!='\0';i++)
+     sum+=inStr[i]-'0';
+     i=0;
+     while( sum )
+     {
+         outStr[i++]=sum%10;
+         sum/=10;
+     }
+     for(int j=i-1;j>=0;j--)
+         printf("%s%c",stdStr[outStr[j]],j?' ':'\n');
+
+     return 0;
+}
